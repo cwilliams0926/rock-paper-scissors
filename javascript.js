@@ -13,14 +13,10 @@ function getComputerChoice() {
     return choice;
 }
 
-console.log(getComputerChoice());
-
 function getHumanChoice() {
     choice = window.prompt("Enter Rock, Paper, or Scissors");
     return choice;
 }
-
-console.log(getHumanChoice());
 
 humanScore = 0;
 computerScore = 0;
