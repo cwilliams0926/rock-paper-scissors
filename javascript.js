@@ -21,3 +21,6 @@ function getHumanChoice() {
 }
 
 console.log(getHumanChoice());
+
+humanScore = 0;
+computerScore = 0;
