@@ -20,3 +20,18 @@ function getHumanChoice() {
 
 humanScore = 0;
 computerScore = 0;
+
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
+
+function playRound(humanChoice, computerChoice) {
+    // Make humanChoice lowercase
+    // Make computerChoice lowercase
+    // if they are the same string, tie
+    // if humanChoice is rock and computerChoice is scissors, win
+    // if humanChoice is paper and computerChoice is rock, win
+    // if humanChoice is scissors and computerChoice is paper, win
+    // else, lose
+}
+
+playRound(humanSelection, computerSelection);
