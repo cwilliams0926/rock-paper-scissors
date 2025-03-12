@@ -18,31 +18,34 @@ function getHumanChoice() {
     return choice;
 }
 
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
-console.log(humanSelection);
-console.log(computerSelection);
-
-playRound(humanSelection, computerSelection);
-
 function playGame() {
-    humanScore = 0;
-    computerScore = 0;
+    let humanScore = 0;
+    let computerScore = 0;
     function playRound(humanChoice, computerChoice) {
         if(humanChoice.toLowerCase() == computerChoice.toLowerCase()) {
             console.log("Draw! You chose the same choice as the computer");
         }
         else if(humanChoice.toLowerCase() == "rock" && computerChoice.toLowerCase() == "scissors") {
             console.log("You win! Rock beats scissors");
+            humanScore++
         }
         else if(humanChoice.toLowerCase() == "paper" && computerChoice.toLowerCase() == "rock") {
             console.log("You win! Paper beats rock!");
+            humanScore++
         }
         else if(humanChoice.toLowerCase() == "scissors" && computerChoice.toLowerCase() == "paper") {
             console.log("You win! Scissors beats paper");
+            humanScore++;
         }
         else {
             console.log("You lose! " + computerChoice + " beats " + humanChoice.toLowerCase());
+            computerScore++
         }
     }
+    for(i = 0; i < 5; i++) {
+        playRound(getHumanChoice(), getComputerChoice());
+    }
+    console.log("The score is Computer: " + computerScore + " to Human: " + humanScore);
 }
+
+playGame();
