@@ -1,20 +1,15 @@
 function getComputerChoice() {
-    randomNum = Math.random() * 100;
+    randomNum = Math.random() * 3;
     let choice = "";
-    if(randomNum < 34) { 
+    if(randomNum < 1) { 
         choice += "Rock"; 
     }
-    else if(randomNum > 67) { 
+    else if(randomNum > 2) { 
         choice += "Paper"; 
     }
     else { 
         choice += "Scissors"; 
     }
-    return choice;
-}
-
-function getHumanChoice() {
-    const choice = window.prompt("Enter Rock, Paper, or Scissors");
     return choice;
 }
 
