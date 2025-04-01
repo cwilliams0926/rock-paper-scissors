@@ -18,31 +18,38 @@ function getHumanChoice() {
     return choice;
 }
 
-function playGame() {
-    let humanScore = 0;
-    let computerScore = 0;
-    function playRound(humanChoice, computerChoice) {
-        if(humanChoice.toLowerCase() == computerChoice.toLowerCase()) {
-            console.log("Draw! You chose the same choice as the computer");
-        }
-        else if(humanChoice.toLowerCase() == "rock" && computerChoice.toLowerCase() == "scissors") {
-            console.log("You win! Rock beats scissors");
-            humanScore++
-        }
-        else if(humanChoice.toLowerCase() == "paper" && computerChoice.toLowerCase() == "rock") {
-            console.log("You win! Paper beats rock!");
-            humanScore++
-        }
-        else if(humanChoice.toLowerCase() == "scissors" && computerChoice.toLowerCase() == "paper") {
-            console.log("You win! Scissors beats paper");
-            humanScore++;
-        }
-        else {
-            console.log("You lose! " + computerChoice + " beats " + humanChoice.toLowerCase());
-            computerScore++
-        }
+let humanScore = 0;
+let computerScore = 0;
+function playRound(humanChoice, computerChoice) {
+    if(humanChoice.toLowerCase() == computerChoice.toLowerCase()) {
+        console.log("Draw! You chose the same choice as the computer");
     }
-    console.log("The score is Computer: " + computerScore + " to Human: " + humanScore);
+    else if(humanChoice.toLowerCase() == "rock" && computerChoice.toLowerCase() == "scissors") {
+        console.log("You win! Rock beats scissors");
+        humanScore++
+    }
+    else if(humanChoice.toLowerCase() == "paper" && computerChoice.toLowerCase() == "rock") {
+        console.log("You win! Paper beats rock!");
+        humanScore++
+    }
+    else if(humanChoice.toLowerCase() == "scissors" && computerChoice.toLowerCase() == "paper") {
+        console.log("You win! Scissors beats paper");
+        humanScore++;
+    }
+    else {
+        console.log("You lose! " + computerChoice + " beats " + humanChoice.toLowerCase());
+        computerScore++
+    }
 }
 
-playGame();
+const rockButton = document.querySelector("#rock");
+rockButton.addEventListener("click", playRound("Rock", getComputerChoice()));
+
+const scissorsButton = document.querySelector("#scissors");
+scissorsButton.addEventListener("click", playRound("Scissors", getComputerChoice()));
+
+const paperButton = document.querySelector("#paper");
+paperButton.addEventListener("click", playRound("paper", getComputerChoice()));
+
+console.log("The score is Computer: " + computerScore + " to Human: " + humanScore);
+
