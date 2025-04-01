@@ -46,3 +46,5 @@ scissorsButton.addEventListener("click", () => {playRound("Scissors", getCompute
 const paperButton = document.querySelector("#paper");
 paperButton.addEventListener("click", () => {playRound("Paper", getComputerChoice());});
 
+const results = document.querySelector("#results");
+
