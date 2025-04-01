@@ -38,13 +38,11 @@ function playRound(humanChoice, computerChoice) {
 }
 
 const rockButton = document.querySelector("#rock");
-rockButton.addEventListener("click", playRound("Rock", getComputerChoice()));
+rockButton.addEventListener("click", () => {playRound("Rock", getComputerChoice());});
 
 const scissorsButton = document.querySelector("#scissors");
-scissorsButton.addEventListener("click", playRound("Scissors", getComputerChoice()));
+scissorsButton.addEventListener("click", () => {playRound("Scissors", getComputerChoice());});
 
 const paperButton = document.querySelector("#paper");
-paperButton.addEventListener("click", playRound("paper", getComputerChoice()));
-
-console.log("The score is Computer: " + computerScore + " to Human: " + humanScore);
+paperButton.addEventListener("click", () => {playRound("Paper", getComputerChoice());});
 
