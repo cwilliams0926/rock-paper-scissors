@@ -1,6 +1,6 @@
 function getComputerChoice() {
     randomNum = Math.random() * 100;
-    choice = "";
+    let choice = "";
     if(randomNum < 34) { 
         choice += "Rock"; 
     }
@@ -14,7 +14,7 @@ function getComputerChoice() {
 }
 
 function getHumanChoice() {
-    choice = window.prompt("Enter Rock, Paper, or Scissors");
+    const choice = window.prompt("Enter Rock, Paper, or Scissors");
     return choice;
 }
 
@@ -41,9 +41,6 @@ function playGame() {
             console.log("You lose! " + computerChoice + " beats " + humanChoice.toLowerCase());
             computerScore++
         }
-    }
-    for(i = 0; i < 5; i++) {
-        playRound(getHumanChoice(), getComputerChoice());
     }
     console.log("The score is Computer: " + computerScore + " to Human: " + humanScore);
 }
