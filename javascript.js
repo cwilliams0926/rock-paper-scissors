@@ -41,6 +41,11 @@ function playRound(humanChoice, computerChoice) {
         console.log("You lose! " + computerChoice + " beats " + humanChoice.toLowerCase());
         computerScore++
     }
+    updateScore();
+}
+
+function updateScore() {
+    score.textContent = "Score --- Computer: " + computerScore + ", You: " + humanScore;
 }
 
 const score = document.querySelector("#score");
@@ -53,6 +58,8 @@ scissorsButton.addEventListener("click", () => {playRound("Scissors", getCompute
 
 const paperButton = document.querySelector("#paper");
 paperButton.addEventListener("click", () => {playRound("Paper", getComputerChoice());});
+
+
 
 
 
