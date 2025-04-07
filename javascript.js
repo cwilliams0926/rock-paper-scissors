@@ -56,3 +56,5 @@ paperButton.addEventListener("click", () => {playRound("Paper", getComputerChoic
 
 
 
+
+
