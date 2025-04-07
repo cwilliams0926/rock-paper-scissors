@@ -43,6 +43,8 @@ function playRound(humanChoice, computerChoice) {
     }
 }
 
+const score = document.querySelector("#score");
+
 const rockButton = document.querySelector("#rock");
 rockButton.addEventListener("click", () => {playRound("Rock", getComputerChoice());});
 
