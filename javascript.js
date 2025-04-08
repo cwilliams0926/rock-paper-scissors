@@ -42,6 +42,7 @@ function playRound(humanChoice, computerChoice) {
         computerScore++
     }
     updateScore();
+    displayWinner();
 }
 
 function updateScore() {
@@ -59,7 +60,17 @@ scissorsButton.addEventListener("click", () => {playRound("Scissors", getCompute
 const paperButton = document.querySelector("#paper");
 paperButton.addEventListener("click", () => {playRound("Paper", getComputerChoice());});
 
+const winner = document.querySelector("#winner");
+winner.setAttribute("style", "font-weight: 900;");
 
+function displayWinner() {
+    if(humanScore == 5) {
+        winner.textContent = "You win!";
+    }
+    else if(computerScore == 5) {
+        winner.textContent = "You lose! Computer wins";
+    }
+}
 
 
 
